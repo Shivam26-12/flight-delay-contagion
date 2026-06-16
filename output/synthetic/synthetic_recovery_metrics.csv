@@ -1,0 +1,12 @@
+,0
+events,798.0
+nodes,8.0
+T,1000.0
+beta_true_fixed,0.3
+spectral_radius_true,0.650000000000001
+spectral_radius_est,0.6966816116159058
+spectral_radius_abs_error,0.04668161161590478
+alpha_allowed_rmse,0.08664607244109095
+mu_rmse,0.008730177873580311
+alpha_allowed_spearman,0.8424908424908425
+mask_violations,0.0

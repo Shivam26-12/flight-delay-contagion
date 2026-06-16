@@ -1,0 +1,9 @@
+{
+  "orientation":"alpha[source,target]",
+  "kernel":"normalized exponential beta*exp(-beta*dt)",
+  "beta":0.2,
+  "stationarity_project":true,
+  "stationarity_target":0.98,
+  "spectral_radius":0.98,
+  "projected_last_iteration":true
+}
