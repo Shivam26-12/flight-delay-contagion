@@ -8,6 +8,7 @@ from hawkes_em import NetworkConstrainedHawkesEM
 
 
 def conditional_loglik(model, times, nodes, train_end_idx, test_end_idx):
+    # Confirmed: This function does not need the Phase 2 fix (it is already strictly sequential/causal)
     beta = model.beta
     mu = model.mu
     alpha = model.alpha
@@ -90,10 +91,10 @@ def hourly_mae(model, times, nodes, train_end_idx, test_end_idx, window_hours=1.
         a = start + w * window_hours
         b = min(a + window_hours, end)
         pred[w, :] += mu * (b - a)
-        # integrate kernels for events before b
-        idx_end = np.searchsorted(hist_t, b, side="left")
+        # integrate kernels for events strictly before `a` (no future data leakage!)
+        idx_end = np.searchsorted(hist_t, a, side="left")
         for t, u in zip(hist_t[:idx_end], hist_u[:idx_end]):
-            lo = max(a, t)
+            lo = a
             if lo < b:
                 effect = np.exp(-beta * (lo - t)) - np.exp(-beta * (b - t))
                 pred[w, :] += alpha[u, :] * effect

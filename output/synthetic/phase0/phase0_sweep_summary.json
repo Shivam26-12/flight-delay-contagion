@@ -1,0 +1,92 @@
+{
+    "0.65": {
+        "spectral_radius_abs_error": {
+            "mean": 0.0037846999999999993,
+            "std": 0.004272544254890755
+        },
+        "alpha_allowed_spearman": {
+            "mean": 0.9840392999999998,
+            "std": 0.005475532029857923
+        },
+        "alpha_rel_rmse": {
+            "mean": 0.0813799,
+            "std": 0.014793581138115275
+        },
+        "mu_rel_error": {
+            "mean": 0.040069299999999995,
+            "std": 0.008184533780857648
+        },
+        "ll_monotone_fraction": {
+            "mean": 1.0,
+            "std": 0.0
+        },
+        "mask_violations": {
+            "mean": 0.0,
+            "std": 0.0
+        },
+        "projection_fired": {
+            "mean": 0.0,
+            "std": 0.0
+        }
+    },
+    "0.9": {
+        "spectral_radius_abs_error": {
+            "mean": 0.0067314,
+            "std": 0.002714410109029216
+        },
+        "alpha_allowed_spearman": {
+            "mean": 0.9604181,
+            "std": 0.012918205374199621
+        },
+        "alpha_rel_rmse": {
+            "mean": 0.1339309,
+            "std": 0.028087243130823645
+        },
+        "mu_rel_error": {
+            "mean": 0.14287670000000002,
+            "std": 0.04918142423730732
+        },
+        "ll_monotone_fraction": {
+            "mean": 1.0,
+            "std": 0.0
+        },
+        "mask_violations": {
+            "mean": 0.0,
+            "std": 0.0
+        },
+        "projection_fired": {
+            "mean": 0.0,
+            "std": 0.0
+        }
+    },
+    "1.05": {
+        "spectral_radius_abs_error": {
+            "mean": 0.07000000000000002,
+            "std": 1.3877787807814457e-17
+        },
+        "alpha_allowed_spearman": {
+            "mean": 0.1823195,
+            "std": 0.14890516125591483
+        },
+        "alpha_rel_rmse": {
+            "mean": 1.0202019999999998,
+            "std": 0.2246019523013992
+        },
+        "mu_rel_error": {
+            "mean": 2.7719429,
+            "std": 1.2227338905816303
+        },
+        "ll_monotone_fraction": {
+            "mean": 1.0,
+            "std": 0.0
+        },
+        "mask_violations": {
+            "mean": 0.0,
+            "std": 0.0
+        },
+        "projection_fired": {
+            "mean": 1.0,
+            "std": 0.0
+        }
+    }
+}

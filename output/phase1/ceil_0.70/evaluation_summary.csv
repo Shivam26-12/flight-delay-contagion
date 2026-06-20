@@ -1,0 +1,11 @@
+,0
+train_events,200000.0
+test_events,50000.0
+hawkes_conditional_loglik,13617.815775490271
+poisson_loglik,3269.7968377128273
+loglik_gain_vs_poisson,10348.018937777444
+hawkes_hourly_mae,1.9445053688991223
+mean_count_baseline_hourly_mae,2.262065133765751
+mae_improvement_percent,14.038488995141103
+spectral_radius,0.7000000000000011
+mask_violations,0.0

@@ -1,0 +1,42 @@
+[
+    {
+        "regime": "Baseline Benchmark",
+        "rho": 0.7,
+        "N": 15,
+        "passed": true,
+        "expected_pass": true,
+        "met_expectations": true
+    },
+    {
+        "regime": "High Dimensionality",
+        "rho": 0.7,
+        "N": 40,
+        "passed": true,
+        "expected_pass": true,
+        "met_expectations": true
+    },
+    {
+        "regime": "High Density Network",
+        "rho": 0.7,
+        "N": 15,
+        "passed": true,
+        "expected_pass": true,
+        "met_expectations": true
+    },
+    {
+        "regime": "Data Starvation",
+        "rho": 0.7,
+        "N": 15,
+        "passed": false,
+        "expected_pass": false,
+        "met_expectations": true
+    },
+    {
+        "regime": "Extreme Super-Criticality",
+        "rho": 1.5,
+        "N": 15,
+        "passed": true,
+        "expected_pass": true,
+        "met_expectations": true
+    }
+]

@@ -4,8 +4,8 @@ test_events,20000.0
 hawkes_conditional_loglik,8824.47519259861
 poisson_loglik,4431.882333327507
 loglik_gain_vs_poisson,4392.5928592711025
-hawkes_hourly_mae,2.05959259079229
+hawkes_hourly_mae,2.139837372450857
 mean_count_baseline_hourly_mae,2.567685733070349
-mae_improvement_percent,19.78798011509371
+mae_improvement_percent,16.662800868075312
 spectral_radius,0.9800000000000023
 mask_violations,0.0

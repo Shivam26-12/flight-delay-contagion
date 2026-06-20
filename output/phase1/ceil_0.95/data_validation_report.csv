@@ -1,0 +1,12 @@
+,0
+rows,738666
+nodes_in_log,30
+adj_shape,"(30, 30)"
+allowed_edges_including_self_loops,812
+min_time_hours,8.684107506878666
+max_time_hours,8773.856774160375
+duration_days,365.215527777229
+global_time_monotone_after_sort,True
+same_node_nonpositive_gaps,0
+node_id_min,0
+node_id_max,29

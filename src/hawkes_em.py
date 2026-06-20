@@ -11,8 +11,10 @@ class EMHistoryRow:
     iteration: int
     log_likelihood: float
     beta: float
-    spectral_radius: float
-    projected: bool
+    rho_pre_projection: float
+    rho_post_projection: float
+    projection_applied: bool
+    projection_scale: float
     elapsed_seconds: float
     mu_min: float
     mu_max: float
@@ -151,11 +153,14 @@ class NetworkConstrainedHawkesEM:
             new_alpha *= self.adj_matrix
             new_alpha = np.maximum(new_alpha, 0.0)
 
-            rho = self.spectral_radius(new_alpha)
+            rho_pre = self.spectral_radius(new_alpha)
             projected = False
-            if self.stationarity_project and rho >= self.stationarity_target:
-                new_alpha *= self.stationarity_target / max(rho, 1e-12)
-                rho = self.spectral_radius(new_alpha)
+            scale = 1.0
+            rho_post = rho_pre
+            if self.stationarity_project and rho_pre >= self.stationarity_target:
+                scale = self.stationarity_target / max(rho_pre, 1e-12)
+                new_alpha *= scale
+                rho_post = self.spectral_radius(new_alpha)
                 projected = True
 
             self.mu = np.maximum(new_mu, 1e-12)
@@ -167,8 +172,10 @@ class NetworkConstrainedHawkesEM:
                 iteration=it,
                 log_likelihood=ll,
                 beta=self.beta,
-                spectral_radius=rho,
-                projected=projected,
+                rho_pre_projection=rho_pre,
+                rho_post_projection=rho_post,
+                projection_applied=projected,
+                projection_scale=scale,
                 elapsed_seconds=elapsed,
                 mu_min=float(self.mu.min()),
                 mu_max=float(self.mu.max()),
@@ -176,8 +183,8 @@ class NetworkConstrainedHawkesEM:
             )
             self.history.append(row)
             if verbose:
-                flag = " projected" if projected else ""
-                print(f"iter={it:02d} ll={ll:,.2f} rho={rho:.4f}{flag} alpha_sum={self.alpha.sum():.2f} time={elapsed:.1f}s")
+                flag = f" [CLAMPED {rho_pre:.4f} -> {rho_post:.4f}]" if projected else ""
+                print(f"iter={it:02d} ll={ll:,.2f} rho_pre={rho_pre:.4f}{flag} alpha_sum={self.alpha.sum():.2f} time={elapsed:.1f}s")
             if it > 1 and abs(ll - prev_ll) <= tol * (1.0 + abs(prev_ll)):
                 if verbose:
                     print("Convergence tolerance reached.")
